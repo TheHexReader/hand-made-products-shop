@@ -73,3 +73,9 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+gem "slim-rails", "~> 3.6"
+
+gem "devise", "~> 4.8"
+
+gem "omniauth", "~> 2.1"
