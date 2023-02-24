@@ -1,0 +1,14 @@
+.d-flex.align-items-center.justify-content-center
+  .card.border-dark.shadow.p-3.w-50
+    = image_tag @product.image
+    h2
+      | #{t('product_title', title: @product.title)}
+    p
+      | #{t('product_description', description: @product.description)}
+    p
+      | #{t('product_price', price: @product.cost)}
+    - unless @product.buyer_id.nil?
+      p.btn.btn-danger
+        | #{t('sold_to', buyer: User.find_by(id: @product.buyer_id).email)}
+    - else
+      = button_to t('buy'), product_buy_path(@product.id), { class: 'text-decoration-none btn btn-primary' }

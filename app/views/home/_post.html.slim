@@ -1,0 +1,11 @@
+.col.card.shadow
+  = image_tag product.image
+  h2
+    = link_to product.title, product_path(product), class: "text-decoration-none"
+  p
+    | #{t('product_description', description: product.description)}
+  p
+    | #{t('product_price', price: product.cost)}
+  - unless product.buyer_id.nil?
+    p.btn.btn-danger
+      | #{t('sold_to', buyer: User.find_by(id: product.buyer_id).email)}

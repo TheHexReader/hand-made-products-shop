@@ -79,3 +79,7 @@ gem "slim-rails", "~> 3.6"
 gem "devise", "~> 4.8"
 
 gem "omniauth", "~> 2.1"
+
+gem "faker", "~> 3.1"
+
+gem "simple_form", "~> 5.2"

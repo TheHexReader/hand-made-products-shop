@@ -1,14 +1,6 @@
-
-.row.row-cols-1.row-cols-sm-2.row-cols-md-3.g-3
-  .col.card
-    h1 Test1
-  .col.card
-    h1 Test2
-  .col.card
-    h1 Test3
-  .col.card
-    h1 Test4
-  .col.card
-    h1 Test5
-  .col.card
-    h1 Test6
+.card.m-5.p-5.shadow
+  h2
+    | #{t('products')}
+  .row.row-cols-1.row-cols-sm-2.row-cols-md-3.g-3
+    - for product in @products
+      = render 'home/post', product: product

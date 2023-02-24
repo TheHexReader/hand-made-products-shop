@@ -1,0 +1,23 @@
+.h-100.d-flex.align-items-center.justify-content-center
+  .card.border-dark.shadow.p-3.w-25.m-5
+    h4.card-title.mb-4.mt-1.d-flex.align-items-center.justify-content-center.m-2
+      | #{t('sign_up')}
+    = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+      = render 'devise/shared/error_messages'
+      .form-group
+        = f.label t('mail')
+        br
+        = f.email_field :email, autofocus: true, autocomplete: 'email', class: 'form-control', placeholder: 'Email'
+      .form-group
+        = f.label t('password')
+        - if @minimum_password_length
+          em
+            |  #{t('minimum_password_characters', characters: @minimum_password_length)}
+        br
+        = f.password_field :password, autocomplete: 'new-password', class: 'form-control', placeholder: '******'
+      .form-group
+        = f.label t('confirm_password')
+        br
+        = f.password_field :password_confirmation, autocomplete: 'new-password', class: 'form-control', placeholder: '******'
+      .form-group.d-flex.align-items-center.justify-content-center.m-2
+        = f.submit t('sign_up'), class: 'btn btn-primary btn-block'
