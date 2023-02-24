@@ -25,6 +25,7 @@ ru:
   sold_to: "Породано: %{buyer}"
   buy: Купить
   product_title: "Название: %{title}"
+  show: Показать
 
   activerecord:
     attributes:
